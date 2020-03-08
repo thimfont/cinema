@@ -30,5 +30,10 @@ public class Cinema {
         gerenciadorDeFilmes.adiciona(vingadores);
         Collection<Filme> filmes = gerenciadorDeFilmes.listaTodosOsFilmes();
         filmes.forEach(System.out::println);
+
+        Filme vingadores2 = new Filme("Vingadores",
+                Duration.ZERO.plus(2, HOURS).plus(45, MINUTES).plus(25, SECONDS));
+        boolean resultado = gerenciadorDeFilmes.verificaSeEstaCadastrado(vingadores2);
+        System.out.println("Vingadores jah foi cadastrado?: " + resultado);
     }
 }

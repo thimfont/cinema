@@ -17,4 +17,8 @@ public class GerenciadorDeFilmes {
     public Collection<Filme> listaTodosOsFilmes() {
         return Collections.unmodifiableCollection(filmes.values());
     }
+
+    public boolean verificaSeEstaCadastrado(Filme vingadores) {
+        return filmes.containsValue(vingadores);
+    }
 }

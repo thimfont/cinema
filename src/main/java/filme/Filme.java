@@ -1,6 +1,7 @@
 package filme;
 
 import java.time.Duration;
+import java.util.Objects;
 
 public class Filme {
     private static Long id = 0l;
@@ -24,6 +25,19 @@ public class Filme {
 
     public void setCategoria(Categoria categoria) {
         this.categoria = categoria;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Filme filme = (Filme) o;
+        return Objects.equals(nome, filme.nome);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(nome);
     }
 
     @Override

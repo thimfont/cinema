@@ -1,5 +1,7 @@
 package sala;
 
+import java.util.Objects;
+
 public class Sala {
     private static Long id = 0l;
     private String numero;
@@ -13,6 +15,19 @@ public class Sala {
 
     public static Long getId() {
         return id;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Sala sala = (Sala) o;
+        return Objects.equals(numero, sala.numero);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(numero);
     }
 
     @Override
